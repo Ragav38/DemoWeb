@@ -1,3 +1,3 @@
 <?php
-echo "I am here"
+echo '<p>This is a PHP script</p>';
 ?>
