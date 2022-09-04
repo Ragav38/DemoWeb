@@ -1,3 +1,6 @@
 <?php
-echo '<p>This is a PHP script</p>';
+if(isset($_POST['submit']))
+  {
+    echo '<p>This is a PHP script</p>';
+  }
 ?>
