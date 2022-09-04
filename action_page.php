@@ -19,6 +19,7 @@ if(isset($_POST['submit']))
         }
         //This below line is a code to Send form entries to database
         $sql = "INSERT INTO Register (emailID, PASSWORD) VALUES ('$email', '$password')";
+        echo $sql
       //fire query to save entries and check it with if statement
         $rs = mysqli_query($con, $sql);
         if($rs)
