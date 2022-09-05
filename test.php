@@ -1,3 +1,3 @@
 <?php
-  echo "Logged in!"
+  echo "Logged in!";
 ?>
