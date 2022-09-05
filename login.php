@@ -109,7 +109,7 @@ span.psw {
 <body>
 
 <div id="id01" class="modal">
-
+  <form action="/login_action.php" method="POST">
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
