@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'ragawebapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E5DC1B966FC542C694AD3F05C5F45D13 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61E34D8D21674AB8ADC375F3EFA62428 }}
           package: .
