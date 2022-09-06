@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //check connection if it is working or not
     if ($con->connect_error)
     {
-        die("Connection failed!" . mysqli_connect_error());
+        die("Connection failed!".mysqli_connect_error());
     }
     
     // Validate credentials
@@ -52,9 +52,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         //fire query to save entries and check it with if statement
         $rs = $con->query($sql);
 
-        if(!$rs->num_rows = 0)
+        if(!$rs->num_rows == 0)
         {
-            echo "Username or password is wrong!"
+            echo "Username or password is wrong!";
         }
 
         $row = $rs->fetch_assoc();
