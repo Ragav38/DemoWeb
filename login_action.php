@@ -66,7 +66,7 @@ if(!empty($_POST)){
             // Store data in session variables
             $_SESSION["loggedin"] = true;
             $_SESSION["username"] = $email;                            
-                            
+            echo "Print now!!!";
             // Redirect user to welcome page
             header("location: welcome.php");
         } 
