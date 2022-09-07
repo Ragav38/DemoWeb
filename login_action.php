@@ -40,7 +40,7 @@ if(!empty($_POST)){
     }
     
     // Validate credentials
-    if(empty($username_err) && empty($password_err))
+    if(empty($email_err) && empty($psw_err))
     {
         // Prepare a select statement
         $sql = "SELECT emailID, PASSWORD FROM Register WHERE emailID = '$email'";
