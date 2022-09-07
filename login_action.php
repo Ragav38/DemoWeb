@@ -24,6 +24,9 @@ if(!empty($_POST)){
     } else{
         $psw = trim($_POST["psw"]);
     }
+ 
+    echo "$email";
+    echo "$psw";
 
     //database details. You have created these details in the third step. Use your own.
     $host = "db4free.net";
