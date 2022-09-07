@@ -10,7 +10,7 @@ $email_err = $psw_err = $login_err = "";
 //if($_SERVER["REQUEST_METHOD"] == "POST"){
 //if (isset($_POST['submit'])){
 if(!empty($_POST)){
- 
+    echo "Print!!!";
     // Check if username is empty
     if(empty(trim($_POST["uname"]))){
         $email_err = "Please enter username.";
