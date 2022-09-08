@@ -68,7 +68,7 @@ if(!empty($_POST)){
         {
             //echo "Username or password is wrong!";
             echo "location: $url";
-            header("location: $url");
+            header("location: https://ragawebapp.azurewebsites.net/login.html");
             exit();
         }
 
