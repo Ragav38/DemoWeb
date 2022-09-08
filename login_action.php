@@ -55,7 +55,8 @@ if(!empty($_POST)){
         if(mysqli_num_rows($rs) == 0)
         {
             //echo "Username or password is wrong!";
-            header("location: login.html");
+            header("location: login.html/");
+            exit();
         }
 
         //$row = $rs->fetch_assoc();
@@ -74,7 +75,8 @@ if(!empty($_POST)){
             $_SESSION["username"] = $email;                            
             echo "Print now!!!";
             // Redirect user to welcome page
-            header("location: welcome.php/");exit();
+            header("location: welcome.php/");
+            exit();
         } 
         else
         {
