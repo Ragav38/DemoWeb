@@ -68,7 +68,7 @@ if(!empty($_POST)){
         {
             //echo "Username or password is wrong!";
             echo "location: $url";
-            header("location: /login.html");
+            header("location:login.html");
             exit();
         }
 
