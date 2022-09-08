@@ -12,7 +12,7 @@ echo $uri; // Outputs: URI
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
  
 $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$url = str_replace("login_action.php", "login.html", $url, $count)
+$url = str_replace("login_action.php", "login.html", $url, $count);
 echo $url; // Outputs: Full URL
  
 // Processing form data when form is submitted
