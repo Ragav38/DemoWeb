@@ -13,13 +13,11 @@ $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERV
  
 $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $url = str_replace("login_action.php", "login.html", $url, $count);
-echo $url; // Outputs: Full URL
  
 // Processing form data when form is submitted
 //if($_SERVER["REQUEST_METHOD"] == "POST"){
 //if (isset($_POST['submit'])){
 if(!empty($_POST)){
-    echo "Print!!!";
     // Check if username is empty
     if(empty(trim($_POST["uname"]))){
         $email_err = "Please enter username.";
@@ -34,9 +32,6 @@ if(!empty($_POST)){
         $psw = trim($_POST["psw"]);
     }
  
-    echo "$email";
-    echo "$psw";
-
     //database details. You have created these details in the third step. Use your own.
     $host = "db4free.net";
     $username = "ragawebuser";
@@ -56,18 +51,14 @@ if(!empty($_POST)){
     {
         // Prepare a select statement
         $sql = "SELECT emailID, PASSWORD FROM Register WHERE emailID = '$email'";
-        echo $sql;
         
         //fire query to save entries and check it with if statement
         $rs = mysqli_query($con,$sql);
         //$rs = $con->query($sql);
      
-        echo mysqli_num_rows($rs);
-
         if(mysqli_num_rows($rs) == 0)
         {
             //echo "Username or password is wrong!";
-            echo "location: $url";
             header("location:login.html");
             exit();
         }
@@ -86,10 +77,9 @@ if(!empty($_POST)){
             // Store data in session variables
             $_SESSION["loggedin"] = true;
             $_SESSION["username"] = $email;                            
-            echo "Print now!!!";
             // Redirect user to welcome page
-            header("location: welcome.php/");
-            exit();
+            //header("location: welcome.php/");
+            //exit();
         } 
         else
         {
