@@ -7,7 +7,7 @@ $email = $psw = "";
 $email_err = $psw_err = $login_err = "";
 
 $uri = $_SERVER['REQUEST_URI'];
-echo $uri; // Outputs: URI
+//echo $uri; // Outputs: URI
  
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
  
@@ -61,6 +61,8 @@ if(!empty($_POST)){
         //fire query to save entries and check it with if statement
         $rs = mysqli_query($con,$sql);
         //$rs = $con->query($sql);
+     
+        echo mysqli_num_rows($rs);
 
         if(mysqli_num_rows($rs) == 0)
         {
