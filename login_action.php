@@ -49,7 +49,7 @@ if(!empty($_POST)){
         $sql = "SELECT emailID, PASSWORD FROM Register WHERE emailID = '$email'";
         
         //fire query to save entries and check it with if statement
-        $rs = mysqli_query($con,$sql)
+        $rs = mysqli_query($con,$sql);
         //$rs = $con->query($sql);
 
         if(mysqli_num_rows($result) == 0)
