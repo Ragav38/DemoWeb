@@ -5,6 +5,14 @@ session_start();
 // Define variables and initialize with empty values
 $email = $psw = "";
 $email_err = $psw_err = $login_err = "";
+
+$uri = $_SERVER['REQUEST_URI'];
+echo $uri; // Outputs: URI
+ 
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+ 
+$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+echo $url; // Outputs: Full URL
  
 // Processing form data when form is submitted
 //if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -47,6 +55,7 @@ if(!empty($_POST)){
     {
         // Prepare a select statement
         $sql = "SELECT emailID, PASSWORD FROM Register WHERE emailID = '$email'";
+        echo $sql;
         
         //fire query to save entries and check it with if statement
         $rs = mysqli_query($con,$sql);
