@@ -49,14 +49,16 @@ if(!empty($_POST)){
         $sql = "SELECT emailID, PASSWORD FROM Register WHERE emailID = '$email'";
         
         //fire query to save entries and check it with if statement
-        $rs = $con->query($sql);
+        $rs = mysqli_query($con,$sql)
+        //$rs = $con->query($sql);
 
-        if(!$rs->num_rows == 0)
+        if(mysqli_num_rows($result) == 0)
         {
             echo "Username or password is wrong!";
         }
 
-        $row = $rs->fetch_assoc();
+        //$row = $rs->fetch_assoc();
+        $row = mysql_fetch_array($result);
 
         $result_emailID = $row["emailID"];
         $result_password = $row["PASSWORD"];
