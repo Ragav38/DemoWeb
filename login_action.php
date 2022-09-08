@@ -52,13 +52,13 @@ if(!empty($_POST)){
         $rs = mysqli_query($con,$sql);
         //$rs = $con->query($sql);
 
-        if(mysqli_num_rows($result) == 0)
+        if(mysqli_num_rows($rs) == 0)
         {
             echo "Username or password is wrong!";
         }
 
         //$row = $rs->fetch_assoc();
-        $row = mysql_fetch_array($result);
+        $row = mysql_fetch_array($rs);
 
         $result_emailID = $row["emailID"];
         $result_password = $row["PASSWORD"];
