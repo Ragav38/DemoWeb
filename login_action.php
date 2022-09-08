@@ -74,7 +74,7 @@ if(!empty($_POST)){
             $_SESSION["username"] = $email;                            
             echo "Print now!!!";
             // Redirect user to welcome page
-            header("location: welcome.php");
+            header("location: welcome.php/");exit();
         } 
         else
         {
