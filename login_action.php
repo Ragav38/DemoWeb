@@ -67,8 +67,8 @@ if(!empty($_POST)){
         if(mysqli_num_rows($rs) == 0)
         {
             //echo "Username or password is wrong!";
-            echo "location: '$url'";
-            header("location: '$url'");
+            echo "location: $url";
+            header("location: $url");
             exit();
         }
 
