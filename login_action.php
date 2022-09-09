@@ -12,7 +12,7 @@ $uri = $_SERVER['REQUEST_URI'];
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
  
 $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$url = str_replace("login_action.php", "login.html", $url, $count);
+$url_error = str_replace("login.php", "login_error.html", $url, $count);
  
 // Processing form data when form is submitted
 //if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -59,7 +59,7 @@ if(!empty($_POST)){
         if(mysqli_num_rows($rs) == 0)
         {
             //echo "Username or password is wrong!";
-            header("location:login.html");
+            header("location:$url_error");
             exit();
         }
 
