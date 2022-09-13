@@ -56,6 +56,9 @@ if(!empty($_POST)){
         $rs = mysqli_query($con,$sql);
         //$rs = $con->query($sql);
      
+        echo mysqli_num_rows($rs);
+        exit();
+     
         if(mysqli_num_rows($rs) == 0)
         {
             //echo "Username or password is wrong!";
