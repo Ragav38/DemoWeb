@@ -2,7 +2,7 @@
 if(!empty($_POST))
     {
         $email = $_POST['email'];
-        $psw = password_hash($_POST['psw'], PASSWORD_BCRYPT);
+        $psw = password_hash($_POST['psw'], PASSWORD_DEFAULT);
         $type = $_POST['membership'];
         
         //database details. You have created these details in the third step. Use your own.
