@@ -81,6 +81,13 @@ a {
 
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    
+    <label for="membership">Choose a membership type</label>
+    <select name="membership" id="membership">
+      <option value="client" selected>Client</option>
+      <option value="builder">Builder</option>
+      <option value="supplier">Supplier</option>
+    </select>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
