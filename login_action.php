@@ -13,6 +13,7 @@ $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERV
  
 $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $url_error = str_replace("login_action.php", "login_error.html", $url, $count);
+$url_success = str_replace("login_action.php", "login_success.html", $url, $count);
  
 // Processing form data when form is submitted
 //if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -79,9 +80,8 @@ if(!empty($_POST)){
             //$_SESSION["loggedin"] = true;
             //$_SESSION["username"] = $email;                            
             // Redirect user to welcome page
-            //header("location: welcome.php/");
+            header("location:$url_success");
             //exit();
-            echo "Welcome!";
         } 
         else
         {
