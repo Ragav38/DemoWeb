@@ -30,7 +30,7 @@ if(!empty($_POST)){
     if(empty(trim($_POST["psw"]))){
         $psw_err = "Please enter your password.";
     } else{
-        $psw = trim($_POST["psw"]);
+        $psw = password_hash(trim($_POST["psw"]), PASSWORD_BCRYPT);
     }
  
     //database details. You have created these details in the third step. Use your own.
@@ -86,8 +86,8 @@ if(!empty($_POST)){
         else
         {
             // Password is not valid, display a generic error message
-            $login_err = "Invalid username or password.";
-            echo $login_err;
+            //$login_err = "Invalid username or password.";
+            header("location:$url_error");
         }
     }
 } 
