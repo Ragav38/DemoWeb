@@ -3,6 +3,7 @@ if(!empty($_POST))
     {
         $email = $_POST['email'];
         $psw = password_hash($_POST['psw'], PASSWORD_BCRYPT);
+        $type = $_POST['membership'];
         
         //database details. You have created these details in the third step. Use your own.
         $host = "db4free.net";
@@ -18,7 +19,7 @@ if(!empty($_POST))
             die("Connection failed!" . mysqli_connect_error());
         }
         //This below line is a code to Send form entries to database
-        $sql = "INSERT INTO Register (emailID, PASSWORD) VALUES ('$email', '$psw')";
+        $sql = "INSERT INTO Register (emailID, PASSWORD, userType) VALUES ('$email', '$psw', '$type')";
         //fire query to save entries and check it with if statement
         $rs = mysqli_query($con, $sql);
         if($rs)
