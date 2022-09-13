@@ -81,6 +81,7 @@ if(!empty($_POST)){
             // Redirect user to welcome page
             //header("location: welcome.php/");
             //exit();
+            echo "Welcome!";
         } 
         else
         {
