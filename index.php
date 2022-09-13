@@ -88,7 +88,7 @@ a {
       <option value="builder">Builder</option>
       <option value="supplier">Supplier</option>
     </select>
-
+    <p>" " <br></p> 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
