@@ -65,7 +65,7 @@ if(!empty($_POST)){
         }
 
         //$row = $rs->fetch_assoc();
-        $row = mysql_fetch_array($rs);
+        $row = mysqli_fetch_row($rs);
      
         echo mysqli_num_rows($rs);
         exit();
