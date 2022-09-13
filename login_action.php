@@ -73,11 +73,11 @@ if(!empty($_POST)){
         if(password_verify($psw, $result_password))
         {
             // Password is correct, so start a new session
-            session_start();
+            //session_start();
                             
             // Store data in session variables
-            $_SESSION["loggedin"] = true;
-            $_SESSION["username"] = $email;                            
+            //$_SESSION["loggedin"] = true;
+            //$_SESSION["username"] = $email;                            
             // Redirect user to welcome page
             //header("location: welcome.php/");
             //exit();
