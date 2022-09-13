@@ -82,7 +82,7 @@ a {
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
     
-    <label for="membership">Choose a membership type</label>
+    <label for="membership"><b>Choose a membership type</b></label>
     <select name="membership" id="membership">
       <option value="client" selected>Client</option>
       <option value="builder">Builder</option>
