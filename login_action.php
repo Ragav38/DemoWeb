@@ -30,7 +30,8 @@ if(!empty($_POST)){
     if(empty(trim($_POST["psw"]))){
         $psw_err = "Please enter your password.";
     } else{
-        $psw = password_hash(trim($_POST["psw"]), PASSWORD_BCRYPT);
+        //$psw = password_hash(trim($_POST["psw"]), PASSWORD_BCRYPT);
+        $psw = trim($_POST["psw"]); 
     }
  
     //database details. You have created these details in the third step. Use your own.
