@@ -87,6 +87,7 @@ if(!empty($_POST)){
         {
             // Password is not valid, display a generic error message
             $login_err = "Invalid username or password.";
+            echo $login_err;
         }
     }
 } 
