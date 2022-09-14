@@ -68,6 +68,8 @@ if(!empty($_POST)){
 
         //$row = $rs->fetch_assoc();
         $row = mysqli_fetch_row($rs);
+     
+        echo $row;
 
         $result_emailID = $row["emailID"];
         $result_password = $row["PASSWORD"];
