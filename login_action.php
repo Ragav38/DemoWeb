@@ -71,11 +71,11 @@ if(!empty($_POST)){
      
         echo $row;
 
-        $result_emailID = $row["emailID"];
-        $result_password = $row["PASSWORD"];
+        $result_emailID = $row[0];
+        $result_password = $row[1];
      
         echo $psw;
-        echo $result_password[1];
+        echo $result_password;
         exit();
             
         if(password_verify($psw, $result_password))
