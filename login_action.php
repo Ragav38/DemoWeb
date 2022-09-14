@@ -71,6 +71,10 @@ if(!empty($_POST)){
 
         $result_emailID = $row["emailID"];
         $result_password = $row["PASSWORD"];
+     
+        echo $psw;
+        echo $result_password;
+        exit();
             
         if(password_verify($psw, $result_password))
         {
