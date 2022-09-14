@@ -75,7 +75,7 @@ if(!empty($_POST)){
         $result_password = $row["PASSWORD"];
      
         echo $psw;
-        echo $result_password;
+        echo $result_password[1];
         exit();
             
         if(password_verify($psw, $result_password))
