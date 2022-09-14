@@ -68,15 +68,9 @@ if(!empty($_POST)){
 
         //$row = $rs->fetch_assoc();
         $row = mysqli_fetch_row($rs);
-     
-        echo $row;
 
         $result_emailID = $row[0];
         $result_password = $row[1];
-     
-        echo $psw;
-        echo $result_password;
-        exit();
             
         if(password_verify($psw, $result_password))
         {
