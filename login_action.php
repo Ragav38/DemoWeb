@@ -13,7 +13,9 @@ $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERV
  
 $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $url_error = str_replace("login_action.php", "login_error.html", $url, $count);
-$url_success = str_replace("login_action.php", "login_success_client.html", $url, $count);
+$url_success_client = str_replace("login_action.php", "login_success_client.html", $url, $count);
+$url_success_builder = str_replace("login_action.php", "login_success_builder.html", $url, $count);
+$url_success_supplier = str_replace("login_action.php", "login_success_supplier.html", $url, $count);
  
 // Processing form data when form is submitted
 //if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -52,7 +54,7 @@ if(!empty($_POST)){
     if(empty($email_err) && empty($psw_err))
     {
         // Prepare a select statement
-        $sql = "SELECT emailID, PASSWORD FROM Register WHERE emailID = '$email'";
+        $sql = "SELECT emailID, PASSWORD, userType FROM Register WHERE emailID = '$email'";
         
         //fire query to save entries and check it with if statement
         $rs = mysqli_query($con,$sql);
@@ -71,9 +73,23 @@ if(!empty($_POST)){
 
         $result_emailID = $row[0];
         $result_password = $row[1];
+        $result_type = $row[2];
             
         if(password_verify($psw, $result_password))
         {
+            
+            if($result_type=="Client")
+            {
+               header("location:$url_success_client");
+            }
+            elseif($result_type=="Builder")
+            {
+               header("location:$url_success_builder");
+            }
+            elseif($result_type=="Supplier")
+            {
+               header("location:$url_success_supplier");
+            }
             // Password is correct, so start a new session
             //session_start();
                             
@@ -81,7 +97,7 @@ if(!empty($_POST)){
             //$_SESSION["loggedin"] = true;
             //$_SESSION["username"] = $email;                            
             // Redirect user to welcome page
-            header("location:$url_success");
+            //header("location:$url_success");
             //exit();
         } 
         else
