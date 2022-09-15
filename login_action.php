@@ -78,15 +78,15 @@ if(!empty($_POST)){
         if(password_verify($psw, $result_password))
         {
             
-            if($result_type=="Client")
+            if($result_type=="client")
             {
                header("location:$url_success_client");
             }
-            elseif($result_type=="Builder")
+            elseif($result_type=="builder")
             {
                header("location:$url_success_builder");
             }
-            elseif($result_type=="Supplier")
+            elseif($result_type=="supplier")
             {
                header("location:$url_success_supplier");
             }
